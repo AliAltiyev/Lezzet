@@ -20,6 +20,8 @@
 			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
+
+
 		<com.google.android.material.floatingactionbutton.FloatingActionButton
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -27,7 +29,7 @@
 			android:elevation="16dp"
 			android:src="@drawable/floating_action_bar_icon"
 			android:tint="@color/white"
-			app:backgroundTint="#25C82C"
+			app:backgroundTint="@color/toolbar_color"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent" />
 

@@ -40,7 +40,8 @@ android {
 dependencies {
 
     implementation 'com.google.android.gms:play-services-fido:18.1.0'
-    def hilt_version = '2.40'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    def hilt_version = '2.42'
     def nav_version = "2.5.1"
     def roomVersion = "2.4.3"
 
@@ -48,8 +49,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -109,7 +109,6 @@ dependencies {
     //Custom State Layout
     implementation 'com.github.yusufonderd:StateLayout:0.1.1'
 
-    //Shimmer RecyclerView
-    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+
 
 }
