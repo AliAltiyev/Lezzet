@@ -46,12 +46,12 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe>? {
+    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe>{
         when {
             response.message().toString().contains("timeout") -> {
                 return NetworkResult.Error(TIME_OUT)
             }
-            response.body()!!.results.isNullOrEmpty() -> {
+            response.body()!!.results.isEmpty() -> {
                 return NetworkResult.Error(NO_RESULT)
             }
             response.code() == ERROR_402 -> {

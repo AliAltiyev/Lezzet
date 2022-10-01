@@ -8,5 +8,6 @@ class Constants {
         const val API_KEY_LIMITED = "Api Key Limited"
         const val NO_RESULT = "No result"
         const val TIME_OUT = "Time out"
+        const val CROSS_FADE_DURATION_MILLIS = 500
     }
 }
