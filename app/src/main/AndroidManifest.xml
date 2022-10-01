@@ -3,8 +3,10 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	package="com.app.lezzet">
 
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<application
 		android:allowBackup="true"
+		android:name=".LezzetApplication"
 		android:dataExtractionRules="@xml/data_extraction_rules"
 		android:fullBackupContent="@xml/backup_rules"
 		android:icon="@mipmap/ic_launcher"
@@ -14,16 +16,19 @@
 		android:theme="@style/Theme.Lezzet"
 		tools:targetApi="31">
 		<activity
-			android:name=".MainActivity"
+			android:name=".ui.MainActivity"
 			android:exported="true"
 			android:label="@string/app_name"
-			android:theme="@style/Theme.Lezzet.NoActionBar">
+			android:theme="@style/Theme.Lezzet">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<meta-data
+			android:name="preloaded_fonts"
+			android:resource="@array/preloaded_fonts" />
 	</application>
 
 </manifest>
