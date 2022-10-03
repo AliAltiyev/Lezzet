@@ -1,14 +1,12 @@
 package com.app.lezzet.ui.fragments
 
 import androidx.fragment.app.Fragment
-import com.app.lezzet.databinding.ActivityMainBinding.bind
-import com.app.lezzet.databinding.FragmentFavoritesBinding
-import com.app.lezzet.databinding.FragmentJokeBinding.bind
-import com.app.lezzet.databinding.FragmentRecipesBinding.bind
-import com.app.lezzet.databinding.RecyclerViewItemLayoutBinding.bind
+import com.app.lezzet.R
 import com.app.lezzet.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class FavoritesFragment : Fragment() {
+@AndroidEntryPoint
+class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
 
     private val binding by viewBinding(com.app.lezzet.databinding.FragmentFavoritesBinding::bind)
 

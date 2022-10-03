@@ -1,4 +1,4 @@
-package com.app.lezzet.data
+package com.app.lezzet.data.network
 
 import com.app.lezzet.data.network.RecipeApi
 import com.app.lezzet.domain.model.FoodRecipe

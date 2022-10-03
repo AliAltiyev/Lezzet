@@ -8,7 +8,7 @@ import com.app.lezzet.databinding.RecyclerViewItemLayoutBinding
 import com.app.lezzet.domain.model.Result
 import com.app.lezzet.util.Constants.Companion.CROSS_FADE_DURATION_MILLIS
 
-class RecipesViewHolder(val binding: RecyclerViewItemLayoutBinding) :
+class RecipesViewHolder(private val binding: RecyclerViewItemLayoutBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     @SuppressLint("ResourceAsColor")
@@ -17,13 +17,13 @@ class RecipesViewHolder(val binding: RecyclerViewItemLayoutBinding) :
             recipeTitleText.text = result.title
             recipeDescriptionText.text = result.summary
             healthIconText.text = result.aggregateLikes.toString()
-            if (result.aggregateLikes > 70) {
+            if (result.aggregateLikes in 1..10) {
                 healthImageIcon.setColorFilter(R.color.toolbar_color)
                 healthIconText.setTextColor(R.color.toolbar_color)
-            } else if (result.aggregateLikes > 85) {
+            } else if (result.aggregateLikes in 85..90) {
                 healthImageIcon.setColorFilter(R.color.green)
                 healthIconText.setTextColor(R.color.green)
-            } else if (result.aggregateLikes > 90) {
+            } else if (result.aggregateLikes in 90..100) {
                 healthImageIcon.setColorFilter(R.color.toolbar_color2)
                 healthIconText.setTextColor(R.color.toolbar_color2)
             } else {
