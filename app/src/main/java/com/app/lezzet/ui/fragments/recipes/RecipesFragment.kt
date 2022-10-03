@@ -1,10 +1,11 @@
-package com.app.lezzet.ui.fragments
+package com.app.lezzet.ui.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.app.lezzet.R
 import com.app.lezzet.databinding.FragmentRecipesBinding
 import com.app.lezzet.ui.adapter.RecipesAdapter
@@ -29,6 +30,7 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.adapter = adapter
         fetchFromDatabase()
+        setUpFloatingActionBar()
     }
 
     private fun fetchFromApi() {
@@ -63,6 +65,12 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
             } else {
                 fetchFromApi()
             }
+        }
+    }
+
+    private fun setUpFloatingActionBar() {
+        binding.floatingActionBar.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_bottomSheet)
         }
     }
 }

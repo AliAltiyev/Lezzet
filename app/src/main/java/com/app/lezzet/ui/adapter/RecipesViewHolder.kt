@@ -39,6 +39,7 @@ class RecipesViewHolder(private val binding: RecyclerViewItemLayoutBinding) :
                 result.image,
             ) {
                 crossfade(CROSS_FADE_DURATION_MILLIS)
+                error(R.drawable.placeholder)
             }
         }
         binding.executePendingBindings()
