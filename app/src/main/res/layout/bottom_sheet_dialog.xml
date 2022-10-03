@@ -7,14 +7,14 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
-
+		android:layout_height="wrap_content">
 
 		<com.google.android.material.textview.MaterialTextView
 			android:id="@+id/country_text_view"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_margin="32dp"
+
 			android:fontFamily="@font/alata"
 			android:text="@string/country"
 			android:textColor="@color/dark_text_color"
@@ -37,62 +37,59 @@
 				android:layout_marginBottom="16dp"
 				android:orientation="vertical">
 
-
 				<com.google.android.material.chip.ChipGroup
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
+					app:selectionRequired="true"
+					app:singleSelection="true"
+					app:chipIconVisible="true"
 					android:layout_height="wrap_content"
 					android:scrollbarStyle="outsideInset"
 					app:checkedChip="@id/american_chip">
 
 					<com.google.android.material.chip.Chip
 						android:id="@+id/arabic_chip"
+						style="@style/CustomChipStyle"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/arabic"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 					<com.google.android.material.chip.Chip
+						style="@style/CustomChipStyle"
 						android:id="@+id/american_chip"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/american"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 					<com.google.android.material.chip.Chip
 						android:id="@+id/british_chip"
 						android:layout_width="wrap_content"
+						style="@style/CustomChipStyle"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/british"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 					<com.google.android.material.chip.Chip
 						android:id="@+id/italian_chip"
+						style="@style/CustomChipStyle"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/italian"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 
 					<com.google.android.material.chip.Chip
 						android:id="@+id/chinese_chip"
+						style="@style/CustomChipStyle"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/chinese"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 
@@ -100,21 +97,19 @@
 						android:id="@+id/mexican_chip"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						style="@style/CustomChipStyle"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/mexican"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 
 					<com.google.android.material.chip.Chip
 						android:id="@+id/indian_chip"
+						style="@style/CustomChipStyle"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_margin="8dp"
-						android:backgroundTint="@color/toolbar_color"
 						android:text="@string/indian"
-						android:textColor="@color/white"
 						android:textSize="18sp" />
 
 
@@ -134,7 +129,6 @@
 			android:layout_margin="32dp"
 			android:fontFamily="@font/alata"
 			android:text="@string/meal_type"
-			android:textColor="@color/dark_text_color"
 			android:textSize="24sp"
 			android:textStyle="bold"
 			app:layout_constraintStart_toStartOf="parent"
@@ -152,18 +146,19 @@
 
 			<com.google.android.material.chip.ChipGroup
 				android:layout_width="match_parent"
+				app:selectionRequired="true"
+				app:singleSelection="true"
 				android:layout_height="match_parent"
 				app:checkedChip="@+id/salad">
 
 				<com.google.android.material.chip.Chip
 					android:id="@+id/main_course"
+					style="@style/CustomChipStyle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
 					android:fontFamily="@font/alata"
-					android:text="Main course"
-					android:textColor="@color/white"
+					android:text="@string/main_course"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -172,10 +167,9 @@
 					android:id="@+id/side_dish"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:backgroundTint="@color/toolbar_color"
 					android:fontFamily="@font/alata"
 					android:text="@string/side_dish"
-					android:textColor="@color/white"
+					style="@style/CustomChipStyle"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -183,11 +177,11 @@
 					android:id="@+id/dessert"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:backgroundTint="@color/toolbar_color"
 					android:fontFamily="@font/alata"
 					android:text="@string/dessert"
-					android:textColor="@color/white"
 					android:textSize="20sp"
+					style="@style/CustomChipStyle"
+
 					android:textStyle="bold" />
 
 				<com.google.android.material.chip.Chip
@@ -195,10 +189,9 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
+					style="@style/CustomChipStyle"
 					android:fontFamily="@font/alata"
 					android:text="@string/salad"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -207,11 +200,11 @@
 					android:id="@+id/breakfast"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+
+					style="@style/CustomChipStyle"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
 					android:fontFamily="@font/alata"
 					android:text="@string/breakfast"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -221,10 +214,9 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
+					style="@style/CustomChipStyle"
 					android:fontFamily="@font/alata"
 					android:text="@string/drink"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -234,10 +226,9 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
+					style="@style/CustomChipStyle"
 					android:fontFamily="@font/alata"
 					android:text="@string/marinade"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -247,10 +238,9 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
+					style="@style/CustomChipStyle"
 					android:fontFamily="@font/alata"
 					android:text="@string/soup"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
@@ -259,11 +249,10 @@
 					android:id="@+id/beverage"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					style="@style/CustomChipStyle"
 					android:layout_marginStart="18dp"
-					android:backgroundTint="@color/toolbar_color"
 					android:fontFamily="@font/alata"
 					android:text="@string/beverage"
-					android:textColor="@color/white"
 					android:textSize="20sp"
 					android:textStyle="bold" />
 
