@@ -2,7 +2,7 @@
 
 <com.yonder.statelayout.StateLayoutView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/floating_action_bar"
+	android:id="@+id/state"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:focusable="auto">
@@ -29,6 +29,7 @@
 			android:elevation="16dp"
 			android:src="@drawable/floating_action_bar_icon"
 			android:tint="@color/white"
+			android:id="@+id/floating_action_bar"
 			app:backgroundTint="@color/toolbar_color"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent" />
