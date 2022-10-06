@@ -40,6 +40,7 @@
 				<com.google.android.material.chip.ChipGroup
 					android:layout_width="match_parent"
 					app:selectionRequired="true"
+					android:id="@+id/country_chip_group_id"
 					app:singleSelection="true"
 					app:chipIconVisible="true"
 					android:layout_height="wrap_content"
@@ -81,8 +82,6 @@
 						android:layout_margin="8dp"
 						android:text="@string/italian"
 						android:textSize="18sp" />
-
-
 					<com.google.android.material.chip.Chip
 						android:id="@+id/chinese_chip"
 						style="@style/CustomChipStyle"
@@ -91,8 +90,6 @@
 						android:layout_margin="8dp"
 						android:text="@string/chinese"
 						android:textSize="18sp" />
-
-
 					<com.google.android.material.chip.Chip
 						android:id="@+id/mexican_chip"
 						android:layout_width="wrap_content"
@@ -101,8 +98,6 @@
 						android:layout_margin="8dp"
 						android:text="@string/mexican"
 						android:textSize="18sp" />
-
-
 					<com.google.android.material.chip.Chip
 						android:id="@+id/indian_chip"
 						style="@style/CustomChipStyle"
@@ -111,14 +106,8 @@
 						android:layout_margin="8dp"
 						android:text="@string/indian"
 						android:textSize="18sp" />
-
-
 				</com.google.android.material.chip.ChipGroup>
-
-
 			</LinearLayout>
-
-
 		</HorizontalScrollView>
 
 
@@ -128,6 +117,7 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="32dp"
 			android:fontFamily="@font/alata"
+			android:textColor="@color/dark_text_color"
 			android:text="@string/meal_type"
 			android:textSize="24sp"
 			android:textStyle="bold"
@@ -147,6 +137,7 @@
 			<com.google.android.material.chip.ChipGroup
 				android:layout_width="match_parent"
 				app:selectionRequired="true"
+				android:id="@+id/meal_type_chip_group_id"
 				app:singleSelection="true"
 				android:layout_height="match_parent"
 				app:checkedChip="@+id/salad">
@@ -262,14 +253,13 @@
 		</LinearLayout>
 
 
-		<com.google.android.material.button.MaterialButton
+		<androidx.appcompat.widget.AppCompatButton
 			android:id="@+id/search_button"
 			android:layout_width="match_parent"
 			android:layout_height="60dp"
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="40dp"
 			android:layout_marginEnd="16dp"
-			android:backgroundTint="@color/white"
 			android:clickable="true"
 			android:elevation="32dp"
 			android:focusable="true"
@@ -278,6 +268,7 @@
 			android:textColor="@color/dark_text_color"
 			android:textStyle="bold"
 			app:cornerRadius="16dp"
+			android:background="@drawable/button_background"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@id/meal_type_container"

@@ -2,10 +2,14 @@ package com.app.lezzet.ui.fragments.recipes
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.app.lezzet.R
 import com.app.lezzet.databinding.FragmentRecipesBinding
 import com.app.lezzet.ui.adapter.RecipesAdapter
@@ -19,8 +23,8 @@ import com.yonder.statelayout.State
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecipesFragment : Fragment(R.layout.fragment_recipes) {
-
+class RecipesFragment : Fragment(R.layout.fragment_recipes), SearchView.OnQueryTextListener {
+    private val navArgs by navArgs<RecipesFragmentArgs>()
     private val mainViewModel: MainViewModel by viewModels()
     private val recipeViewModel: RecipeViewModel by viewModels()
     private val adapter by lazy { RecipesAdapter() }
@@ -28,9 +32,43 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         binding.recyclerView.adapter = adapter
         fetchFromDatabase()
         setUpFloatingActionBar()
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val item = menu.findItem(R.id.menu_search)
+        val searchView = item.actionView as? SearchView
+        searchView?.isSubmitButtonEnabled = true
+        searchView?.setOnQueryTextListener(this)
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onQueryTextSubmit(text: String?): Boolean {
+
+        return true
+        Log.d("save", text.toString())
+    }
+
+    override fun onQueryTextChange(text: String?): Boolean {
+        Log.d("save", text.toString())
+        return true
+    }
+
+    private fun fetchFromDatabase() {
+        mainViewModel.fetchRecipesFromRoom.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty() && navArgs.answerFromBottomSheet) {
+                Log.d("Fetch", "Fetch from database")
+                adapter.submitList(it[0].foodRecipe.results)
+            } else {
+                fetchFromApi()
+            }
+        }
     }
 
     private fun fetchFromApi() {
@@ -52,18 +90,6 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
                             .show()
                     }
                 }
-
-            }
-        }
-    }
-
-    private fun fetchFromDatabase() {
-        mainViewModel.fetchRecipesFromRoom.observe(viewLifecycleOwner) {
-            if (it.isNotEmpty()) {
-                Log.d("Fetch", "Fetch from database")
-                adapter.submitList(it[0].foodRecipe.results)
-            } else {
-                fetchFromApi()
             }
         }
     }

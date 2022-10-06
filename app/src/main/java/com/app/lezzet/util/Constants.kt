@@ -23,8 +23,20 @@ class Constants {
         const val QUERY_NUMBER = "number"
         const val QUERY_API_KEY = "apiKey"
         const val QUERY_TYPE = "type"
-        const val QUERY_DIET = "diet"
+        const val QUERY_COUSINE = "cuisine"
         const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
         const val QUERY_FILL_INGREDIENTS = "fillIngredients"
+
+        const val PREFERENCES_NAME = "foody_preferences"
+        const val PREFERENCES_MEAL_TYPE = "mealType"
+        const val PREFERENCES_MEAL_TYPE_ID = "mealTypeId"
+        const val PREFERENCES_COUNTRY = "country"
+        const val PREFERENCES_COUNRTY_ID = "countryId"
+        const val PREFERENCES_BACK_ONLINE = "backOnline"
+
+        //Default meal type and country
+        const val DEFAULT_MEAL_TYPE = "salad"
+        const val DEFAULT_COUNTRY = "America"
+
     }
 }
