@@ -26,17 +26,25 @@ class MainViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     val recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+    val searchRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     val fetchRecipesFromRoom: LiveData<List<FoodRecipeRoomModel>> =
         repository.localDataSource.getRecipes().asLiveData()
 
-    fun getRecipes(queries: Map<String, String>) = viewModelScope.launch {
-        getRecipesSafeCall(queries)
-    }
-
+    //Room
     private fun insertRecipesToRoom(recipes: FoodRecipeRoomModel) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.localDataSource.insertRecipe(recipes)
         }
+    }
+
+    private fun offlineCache(foodRecipe: FoodRecipe) {
+        val recipe = FoodRecipeRoomModel(foodRecipe)
+        insertRecipesToRoom(recipe)
+    }
+
+    //Retrofit Get All Recipes
+    fun getRecipes(queries: Map<String, String>) = viewModelScope.launch {
+        getRecipesSafeCall(queries)
     }
 
     private suspend fun getRecipesSafeCall(queries: Map<String, String>) {
@@ -57,9 +65,22 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun offlineCache(foodRecipe: FoodRecipe) {
-        val recipe = FoodRecipeRoomModel(foodRecipe)
-        insertRecipesToRoom(recipe)
+    fun getSearchResult(queries: Map<String, String>) = viewModelScope.launch {
+        getSearchResultSafeCall(queries)
+    }
+
+    private suspend fun getSearchResultSafeCall(queries: Map<String, String>) {
+        searchRecipesResponse.value = NetworkResult.Loading()
+        if (hasInternetConnection()) {
+            try {
+                val response = repository.remoteDataSource.searchRecipes(queries)
+                searchRecipesResponse.value = handleFoodRecipesResponse(response)
+            } catch (e: Exception) {
+                recipesResponse.value = NetworkResult.Error(e.message)
+            }
+        } else {
+            recipesResponse.value = NetworkResult.Error("No Internet connection")
+        }
     }
 
     private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {

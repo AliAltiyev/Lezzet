@@ -5,7 +5,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
-import android.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -39,24 +39,31 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes), SearchView.OnQueryT
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.search_menu, menu)
         val item = menu.findItem(R.id.menu_search)
         val searchView = item.actionView as? SearchView
         searchView?.isSubmitButtonEnabled = true
         searchView?.setOnQueryTextListener(this)
-
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onQueryTextSubmit(text: String?): Boolean {
-
+        if (text != null) {
+            searchQueryFromApi(text)
+        } else {
+            fetchFromDatabase()
+        }
         return true
-        Log.d("save", text.toString())
     }
 
     override fun onQueryTextChange(text: String?): Boolean {
-        Log.d("save", text.toString())
+        if (text != null) {
+            searchQueryFromApi(text)
+        } else {
+            fetchFromDatabase()
+        }
         return true
     }
 
@@ -72,7 +79,6 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes), SearchView.OnQueryT
     }
 
     private fun fetchFromApi() {
-        Log.d("Fetch", "Fetch from api")
         binding.run {
             mainViewModel.getRecipes(recipeViewModel.applyQueries())
             mainViewModel.recipesResponse.observe(viewLifecycleOwner) { response ->
@@ -89,6 +95,24 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes), SearchView.OnQueryT
                         Snackbar.make(requireView(), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG)
                             .show()
                     }
+                }
+            }
+        }
+    }
+
+    private fun searchQueryFromApi(query: String) = with(binding) {
+        mainViewModel.getSearchResult(recipeViewModel.applySearchQuaries(query))
+        mainViewModel.searchRecipesResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is NetworkResult.Success -> {
+                    adapter.submitList(it.data?.results)
+                    state.setState(State.CONTENT)
+                }
+                is NetworkResult.Loading -> {
+                    state.setState(State.LOADING)
+                }
+                is NetworkResult.Error -> {
+                    state.setState(State.ERROR)
                 }
             }
         }

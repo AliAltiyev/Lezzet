@@ -2,8 +2,6 @@ package com.app.lezzet.util
 
 class Constants {
     companion object {
-
-
         //Database
         const val DATABASE_NAME = "recipes"
         const val DATABASE_VERSION = 1
@@ -26,7 +24,7 @@ class Constants {
         const val QUERY_COUSINE = "cuisine"
         const val QUERY_ADD_RECIPE_INFORMATION = "addRecipeInformation"
         const val QUERY_FILL_INGREDIENTS = "fillIngredients"
-
+        const val QUERY = "query"
         const val PREFERENCES_NAME = "foody_preferences"
         const val PREFERENCES_MEAL_TYPE = "mealType"
         const val PREFERENCES_MEAL_TYPE_ID = "mealTypeId"
