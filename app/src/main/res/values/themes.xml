@@ -8,6 +8,21 @@
 	</style>
 
 
+	//Chip Style
+
+	<style name="CustomChipStyle" parent="@style/Widget.MaterialComponents.Chip.Filter">
+		<item name="chipBackgroundColor">@color/bottom_sheet_background_color</item>
+		<item name="android:textColor">@color/bottom_sheet_text_color</item>
+		<item name="checkedIconTint">@color/bottom_sheet_text_color</item>
+	</style>
+
+	//Button Style
+
+	<style name="CustomButtonStyle" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+		<item name="backgroundTint">@color/backgroundColor</item>
+	</style>
+
+
 	<style name="Theme.Lezzet.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 	<style name="Theme.Lezzet.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

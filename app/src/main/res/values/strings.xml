@@ -14,4 +14,23 @@
 	<string name="recipes">Recipes</string>
 	<string name="jokes">Jokes</string>
 	<string name="favorites">Favorites</string>
+	<string name="meal_type">Meal Type</string>
+	<string name="country">Country</string>
+	<string name="arabic">Arabic</string>
+	<string name="american">American</string>
+	<string name="british">British</string>
+	<string name="italian">Italian</string>
+	<string name="chinese">Chinese</string>
+	<string name="mexican">Mexican</string>
+	<string name="indian">Indian</string>
+	<string name="side_dish">Side dish</string>
+	<string name="dessert">dessert</string>
+	<string name="salad">salad</string>
+	<string name="breakfast">breakfast</string>
+	<string name="drink">drink</string>
+	<string name="marinade">marinade</string>
+	<string name="beverage">beverage</string>
+	<string name="soup">soup</string>
+	<string name="search">Search</string>
+	<string name="main_course">Main course</string>
 </resources>

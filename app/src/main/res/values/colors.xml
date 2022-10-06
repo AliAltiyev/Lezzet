@@ -15,5 +15,11 @@
 	<color name="toolbar_color2">#132a13</color>
 	<color name="gray">#6A6A6A</color>
 
+	// Custom Chip Style
+	<color name="checkedChipBackgroundColor">#206200EA</color>
+	<color name="chipBackgroundColor">@color/gray</color>
+	<color name="checkedChipTextColor">@color/white</color>
+	<color name="chipTextColor">@color/white</color>
+
 
 </resources>

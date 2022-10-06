@@ -61,7 +61,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
@@ -114,6 +113,8 @@ dependencies {
     //Custom State Layout
     implementation 'com.github.yusufonderd:StateLayout:0.1.1'
 
+    //DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha01"
 
 
 }

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/country_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="32dp"
+
+			android:fontFamily="@font/alata"
+			android:text="@string/country"
+			android:textColor="@color/dark_text_color"
+			android:textSize="24sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<HorizontalScrollView
+			android:id="@+id/horizontal_scroll_view"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/country_text_view">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				android:orientation="vertical">
+
+				<com.google.android.material.chip.ChipGroup
+					android:layout_width="match_parent"
+					app:selectionRequired="true"
+					android:id="@+id/country_chip_group_id"
+					app:singleSelection="true"
+					app:chipIconVisible="true"
+					android:layout_height="wrap_content"
+					android:scrollbarStyle="outsideInset"
+					app:checkedChip="@id/american_chip">
+
+					<com.google.android.material.chip.Chip
+						android:id="@+id/arabic_chip"
+						style="@style/CustomChipStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/arabic"
+						android:textSize="18sp" />
+
+					<com.google.android.material.chip.Chip
+						style="@style/CustomChipStyle"
+						android:id="@+id/american_chip"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/american"
+						android:textSize="18sp" />
+
+					<com.google.android.material.chip.Chip
+						android:id="@+id/british_chip"
+						android:layout_width="wrap_content"
+						style="@style/CustomChipStyle"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/british"
+						android:textSize="18sp" />
+
+					<com.google.android.material.chip.Chip
+						android:id="@+id/italian_chip"
+						style="@style/CustomChipStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/italian"
+						android:textSize="18sp" />
+					<com.google.android.material.chip.Chip
+						android:id="@+id/chinese_chip"
+						style="@style/CustomChipStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/chinese"
+						android:textSize="18sp" />
+					<com.google.android.material.chip.Chip
+						android:id="@+id/mexican_chip"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						style="@style/CustomChipStyle"
+						android:layout_margin="8dp"
+						android:text="@string/mexican"
+						android:textSize="18sp" />
+					<com.google.android.material.chip.Chip
+						android:id="@+id/indian_chip"
+						style="@style/CustomChipStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="8dp"
+						android:text="@string/indian"
+						android:textSize="18sp" />
+				</com.google.android.material.chip.ChipGroup>
+			</LinearLayout>
+		</HorizontalScrollView>
+
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/meal_type_text_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="32dp"
+			android:fontFamily="@font/alata"
+			android:textColor="@color/dark_text_color"
+			android:text="@string/meal_type"
+			android:textSize="24sp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/horizontal_scroll_view" />
+
+
+		<LinearLayout
+			android:id="@+id/meal_type_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:orientation="vertical"
+			app:layout_constraintTop_toBottomOf="@id/meal_type_text_view">
+
+
+			<com.google.android.material.chip.ChipGroup
+				android:layout_width="match_parent"
+				app:selectionRequired="true"
+				android:id="@+id/meal_type_chip_group_id"
+				app:singleSelection="true"
+				android:layout_height="match_parent"
+				app:checkedChip="@+id/salad">
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/main_course"
+					style="@style/CustomChipStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="18dp"
+					android:fontFamily="@font/alata"
+					android:text="@string/main_course"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/side_dish"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/alata"
+					android:text="@string/side_dish"
+					style="@style/CustomChipStyle"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/dessert"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/alata"
+					android:text="@string/dessert"
+					android:textSize="20sp"
+					style="@style/CustomChipStyle"
+
+					android:textStyle="bold" />
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/salad"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="18dp"
+					style="@style/CustomChipStyle"
+					android:fontFamily="@font/alata"
+					android:text="@string/salad"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/breakfast"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+
+					style="@style/CustomChipStyle"
+					android:layout_marginStart="18dp"
+					android:fontFamily="@font/alata"
+					android:text="@string/breakfast"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/drink"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="18dp"
+					style="@style/CustomChipStyle"
+					android:fontFamily="@font/alata"
+					android:text="@string/drink"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/marinade"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="18dp"
+					style="@style/CustomChipStyle"
+					android:fontFamily="@font/alata"
+					android:text="@string/marinade"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/soup"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="18dp"
+					style="@style/CustomChipStyle"
+					android:fontFamily="@font/alata"
+					android:text="@string/soup"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+
+				<com.google.android.material.chip.Chip
+					android:id="@+id/beverage"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					style="@style/CustomChipStyle"
+					android:layout_marginStart="18dp"
+					android:fontFamily="@font/alata"
+					android:text="@string/beverage"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+			</com.google.android.material.chip.ChipGroup>
+
+
+		</LinearLayout>
+
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/search_button"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="40dp"
+			android:layout_marginEnd="16dp"
+			android:clickable="true"
+			android:elevation="32dp"
+			android:focusable="true"
+			android:fontFamily="@font/alata"
+			android:text="@string/search"
+			android:textColor="@color/dark_text_color"
+			android:textStyle="bold"
+			app:cornerRadius="16dp"
+			android:background="@drawable/button_background"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/meal_type_container"
+			app:strokeColor="@color/green"
+			app:strokeWidth="2dp" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+
+

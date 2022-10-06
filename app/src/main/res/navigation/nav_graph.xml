@@ -6,9 +6,17 @@
 	app:startDestination="@id/recipesFragment">
 	<fragment
 		android:id="@+id/recipesFragment"
-		android:name="com.app.lezzet.ui.fragments.RecipesFragment"
+		android:name="com.app.lezzet.ui.fragments.recipes.RecipesFragment"
 		android:label="RecipesFragment"
-		tools:layout="@layout/fragment_recipes" />
+		tools:layout="@layout/fragment_recipes">
+		<action
+			android:id="@+id/action_recipesFragment_to_bottomSheet"
+			app:destination="@id/bottomSheet" />
+		<argument
+			android:name="answerFromBottomSheet"
+			app:argType="boolean"
+			android:defaultValue="true" />
+	</fragment>
 	<fragment
 		android:id="@+id/favoritesFragment"
 		android:name="com.app.lezzet.ui.fragments.FavoritesFragment"
@@ -20,4 +28,13 @@
 		android:id="@+id/jokeFragment"
 		android:label="JokeFragment"
 		tools:layout="@layout/fragment_joke" />
+	<dialog
+		android:id="@+id/bottomSheet"
+		android:name="com.app.lezzet.ui.fragments.recipes.BottomSheet"
+		android:label="BottomSheet"
+		tools:layout="@layout/bottom_sheet_dialog">
+		<action
+			android:id="@+id/action_bottomSheet_to_recipesFragment"
+			app:destination="@id/recipesFragment" />
+	</dialog>
 </navigation>
