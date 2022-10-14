@@ -24,12 +24,14 @@
 
 		<com.google.android.material.tabs.TabLayout
 			android:id="@+id/tabLayout"
-			android:layout_marginTop="2dp"
 			style="@style/CustomTabLayoutStyle"
-			android:background="@drawable/tab_layout_background"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			app:layout_scrollFlags="enterAlways|scroll" />
+
+			android:layout_marginTop="2dp"
+			android:background="@drawable/tab_layout_background"
+			app:layout_scrollFlags="enterAlways|scroll"
+			app:tabIndicatorColor="@color/gray" />
 
 		<androidx.viewpager2.widget.ViewPager2
 			android:id="@+id/viewPager2"

@@ -120,5 +120,10 @@ dependencies {
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha01"
 
+    //Jsoup
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    //MlKit
+    implementation 'com.google.mlkit:translate:17.0.1'
 
 }

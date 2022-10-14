@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.app.lezzet.R
 import com.app.lezzet.databinding.FragmentRecipesBinding
-import com.app.lezzet.ui.adapter.RecipesAdapter
+import com.app.lezzet.ui.adapter.recipes.RecipesAdapter
 import com.app.lezzet.ui.viewmodel.MainViewModel
 import com.app.lezzet.ui.viewmodel.RecipeViewModel
 import com.app.lezzet.util.Constants.Companion.NO_INTERNET_CONNECTION
@@ -27,7 +27,7 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes), SearchView.OnQueryT
     private val navArgs by navArgs<RecipesFragmentArgs>()
     private val mainViewModel: MainViewModel by viewModels()
     private val recipeViewModel: RecipeViewModel by viewModels()
-    private val adapter by lazy { RecipesAdapter() }
+    private val adapter by lazy { RecipesAdapter(requireContext()) }
     private val binding by viewBinding(FragmentRecipesBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

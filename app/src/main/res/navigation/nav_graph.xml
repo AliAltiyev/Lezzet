@@ -22,12 +22,12 @@
 	</fragment>
 	<fragment
 		android:id="@+id/favoritesFragment"
-		android:name="com.app.lezzet.ui.fragments.FavoritesFragment"
+		android:name="com.app.lezzet.ui.fragments.favorites.FavoritesFragment"
 		android:label="FavoritesFragment"
 
 		tools:layout="@layout/fragment_favorites" />
 	<fragment
-		android:name="com.app.lezzet.ui.fragments.JokeFragment"
+		android:name="com.app.lezzet.ui.fragments.jokes.JokeFragment"
 		android:id="@+id/jokeFragment"
 		android:label="JokeFragment"
 		tools:layout="@layout/fragment_joke" />
