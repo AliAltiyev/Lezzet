@@ -16,15 +16,18 @@
 			android:name="answerFromBottomSheet"
 			app:argType="boolean"
 			android:defaultValue="true" />
+		<action
+			android:id="@+id/action_recipesFragment_to_detailsActivity"
+			app:destination="@id/detailsActivity" />
 	</fragment>
 	<fragment
 		android:id="@+id/favoritesFragment"
-		android:name="com.app.lezzet.ui.fragments.FavoritesFragment"
+		android:name="com.app.lezzet.ui.fragments.favorites.FavoritesFragment"
 		android:label="FavoritesFragment"
 
 		tools:layout="@layout/fragment_favorites" />
 	<fragment
-		android:name="com.app.lezzet.ui.fragments.JokeFragment"
+		android:name="com.app.lezzet.ui.fragments.jokes.JokeFragment"
 		android:id="@+id/jokeFragment"
 		android:label="JokeFragment"
 		tools:layout="@layout/fragment_joke" />
@@ -37,4 +40,13 @@
 			android:id="@+id/action_bottomSheet_to_recipesFragment"
 			app:destination="@id/recipesFragment" />
 	</dialog>
+	<activity
+		android:id="@+id/detailsActivity"
+		android:name="com.app.lezzet.ui.activity.DetailsActivity"
+		android:label="activity_details"
+		tools:layout="@layout/activity_details" >
+		<argument
+			android:name="result"
+			app:argType="com.app.lezzet.domain.model.Result" />
+	</activity>
 </navigation>

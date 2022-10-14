@@ -1,4 +1,4 @@
-package com.app.lezzet.ui.fragments
+package com.app.lezzet.ui.fragments.jokes
 
 import androidx.fragment.app.Fragment
 import com.app.lezzet.R

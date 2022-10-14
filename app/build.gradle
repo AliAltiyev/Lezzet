@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
@@ -37,6 +38,9 @@ android {
     }
     dataBinding {
         enabled = true
+    }
+    androidExtensions {
+        experimental = true
     }
 }
 
@@ -116,5 +120,10 @@ dependencies {
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha01"
 
+    //Jsoup
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+    //MlKit
+    implementation 'com.google.mlkit:translate:17.0.1'
 
 }

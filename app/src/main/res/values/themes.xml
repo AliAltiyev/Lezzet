@@ -2,14 +2,32 @@
 	<!-- Base application theme. -->
 	<style name="Theme.Lezzet" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 		<!-- Primary brand color. -->
-		<item name="colorPrimary">@color/toolbar_color</item>
-		<item name="colorPrimaryDark">@color/toolbar_color</item>
+		<item name="colorPrimary">@color/dark_text_color</item>
+		<item name="colorPrimaryDark">@color/dark_text_color</item>
 		<item name="colorAccent">@color/teal_200</item>
 	</style>
 
 
-	//Chip Style
+	<style name="DetailsActivityStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<item name="colorPrimary">@color/toolbar_color</item>
+		<item name="colorPrimaryDark">@color/toolbar_color</item>
+		<item name="colorAccent">@color/teal_200</item>
+		<item name="colorControlNormal">@color/white</item>
+		<item name="android:statusBarColor">@color/white</item>
+	</style>
 
+	//Custom TabLayout Style
+	<style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
+		<item name="android:background">@color/toolbar_color</item>
+		<item name="indicatorColor">@color/dark_text_color</item>
+		<item name="indeterminateAnimationType">contiguous</item>
+		<item name="indicatorSize">3dp</item>
+		<item name="tabSelectedTextColor">@color/white</item>
+		<item name="android:radius">16dp</item>
+		<item name="cornerRadius">16dp</item>
+	</style>
+
+	//Chip Style
 	<style name="CustomChipStyle" parent="@style/Widget.MaterialComponents.Chip.Filter">
 		<item name="chipBackgroundColor">@color/bottom_sheet_background_color</item>
 		<item name="android:textColor">@color/bottom_sheet_text_color</item>
@@ -17,7 +35,6 @@
 	</style>
 
 	//Button Style
-
 	<style name="CustomButtonStyle" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
 		<item name="backgroundTint">@color/backgroundColor</item>
 	</style>

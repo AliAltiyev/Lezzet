@@ -33,4 +33,8 @@
 	<string name="soup">soup</string>
 	<string name="search">Search</string>
 	<string name="main_course">Main course</string>
+	<string name="healthy">Healthy</string>
+	<string name="cheap">Cheap</string>
+	<string name="vegan">Vegan</string>
+	<string name="title">Title</string>
 </resources>

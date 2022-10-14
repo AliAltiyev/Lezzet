@@ -1,7 +1,10 @@
 package com.app.lezzet.domain.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ExtendedIngredients(
     @SerializedName("amount")
     val amount: Double,
@@ -15,4 +18,4 @@ data class ExtendedIngredients(
     val original: String,
     @SerializedName("unit")
     val unit: String
-)
+) : Parcelable
