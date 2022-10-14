@@ -28,7 +28,7 @@ class MainViewModel @Inject constructor(
     val recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     val searchRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     val fetchRecipesFromRoom: LiveData<List<FoodRecipeRoomModel>> =
-        repository.localDataSource.getRecipes().asLiveData()
+        repository.localDataSource.getAllRecipes().asLiveData()
 
     //Room
     private fun insertRecipesToRoom(recipes: FoodRecipeRoomModel) {

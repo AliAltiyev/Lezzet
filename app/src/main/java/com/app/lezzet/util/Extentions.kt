@@ -29,5 +29,6 @@ fun String.translateToRussian(): String? {
     }
     englishGermanTranslator.close()
     return text
-
 }
+
+val Int.Companion.ZERO: Int get() = 0

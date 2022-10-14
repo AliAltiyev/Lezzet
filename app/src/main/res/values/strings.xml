@@ -37,4 +37,6 @@
 	<string name="cheap">Cheap</string>
 	<string name="vegan">Vegan</string>
 	<string name="title">Title</string>
+	<string name="save">Save</string>
+	<string name="added_to_favorites">Added to Favorites</string>
 </resources>

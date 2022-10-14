@@ -3,8 +3,9 @@ package com.app.lezzet.util
 class Constants {
     companion object {
         //Database
+        const val FAVORITES_DATABASE_TABLE_NAME = "favorites"
         const val DATABASE_NAME = "recipes"
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
         const val TABLE_NAME = "recipes_table"
         //Network
         const val INGREDIENTS_BASE_URL  = "https://spoonacular.com/cdn/ingredients_100x100/"
@@ -39,7 +40,6 @@ class Constants {
         const val OVERVIEW_FRAGMENT_TITLE = "Overview"
         const val INSTRUCTIONS_FRAGMENT_TITLE = "Instructions"
         const val INGREDIENTS_FRAGMENT_TITLE = "Ingredients"
-
         //Details Fragment Bundle KEY
         const val BUNDLE_KEY = "data"
     }

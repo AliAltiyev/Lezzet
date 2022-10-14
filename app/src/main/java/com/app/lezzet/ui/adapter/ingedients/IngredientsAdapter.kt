@@ -9,6 +9,7 @@ import com.app.lezzet.domain.model.ExtendedIngredients
 import com.app.lezzet.ui.adapter.base.BaseAdapter
 import com.app.lezzet.util.Constants.Companion.INGREDIENTS_BASE_URL
 import kotlinx.android.synthetic.main.ingredients_recycler_item_raw.view.*
+import java.util.*
 
 class IngredientsAdapter : BaseAdapter<ExtendedIngredients>(
     itemsSame = { old, new -> old.amount == new.amount },
@@ -32,7 +33,11 @@ class IngredientsAdapter : BaseAdapter<ExtendedIngredients>(
             is IngredientsViewHolder ->
                 holder.itemView.run {
                     ingredient_image.load(INGREDIENTS_BASE_URL + item.image)
-                    name_text_view.text = item.name
+                    name_text_view.text = item.name.replaceFirstChar {
+                        if (it.isLowerCase()) it.titlecase(
+                            Locale.ROOT
+                        ) else it.toString()
+                    }
                     amount_text_view.text = item.amount.toString()
                     unit_text_view.text = item.unit
                     consistency_text_view.text = item.consistency
